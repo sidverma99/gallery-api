@@ -22,7 +22,7 @@ const __dirname = path.resolve();
 const app=express();
 app.use("/images", express.static(path.join(__dirname,"/images")));
 
-app.listen(8000,()=>{
+app.listen(process.env.PORT || 8000,()=>{
     connect();
     console.log("Connected to backend");
 });
