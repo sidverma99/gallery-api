@@ -7,7 +7,7 @@ export const uploadFile=async(req,res,next)=>{
         const newImage=new Images({
             photo: req.file.filename,
             user_id: req.params.id,
-            url: "http://localhost:8000/images/"+req.file.filename
+            url: "https://sidimggallery.herokuapp.com/images/"+req.file.filename
         });
         await newImage.save();
         res.status(200).json("file has been uploaded");
